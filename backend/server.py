@@ -12,7 +12,7 @@ from pydantic import BaseModel, Field, ConfigDict
 from typing import List, Optional, Any, Dict
 from datetime import datetime, timezone
 
-from emergentintegrations.llm.chat import LlmChat, UserMessage
+# Emergent LLM integration removed for independent deployment
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -21,7 +21,7 @@ mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
-EMERGENT_LLM_KEY = os.environ.get('EMERGENT_LLM_KEY')
+EMERGENT_LLM_KEY = None
 
 app = FastAPI(title="BranchIQ API")
 api_router = APIRouter(prefix="/api")
