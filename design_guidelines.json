@@ -1,0 +1,257 @@
+{
+  "identity": {
+    "app_name": "BRANCHIQ",
+    "tagline": "AI Banking Network Strategy Consultant",
+    "target_audience": "Strategy Consultant, Banking Executive, Chief Strategy Officer, Head of Retail Banking, Network Planning Head, Digital Banking Head",
+    "visual_character": "McKinsey/BCG-style executive decision-support system, data-heavy consulting analytics platform, natural professional data-analyst presentation. Avoids generic AI chatbot look, student dashboards, or excessive rounded gradients.",
+    "theme_mode": "Light Main Canvas (#F4F7FB) with Deep Navy (#071426) Executive Sidebar and High-Contrast Data Cards"
+  },
+  "colors": {
+    "dark_navy": "#071426",
+    "deep_navy": "#0C1D33",
+    "professional_blue": "#1687F8",
+    "cyan": "#27C3E8",
+    "white": "#FFFFFF",
+    "light_gray": "#F4F7FB",
+    "border_gray": "#DFE7F0",
+    "green": "#16A36A",
+    "orange": "#E79B24",
+    "red": "#D9534F",
+    "purple": "#7657D9"
+  },
+  "typography": {
+    "font_family_headings": "Outfit, Cabinet Grotesk, sans-serif",
+    "font_family_body": "Inter, IBM Plex Sans, sans-serif",
+    "font_family_mono": "JetBrains Mono, Source Code Pro, monospace",
+    "hierarchy": {
+      "h1": "text-3xl font-bold tracking-tight text-[#071426]",
+      "h2": "text-2xl font-semibold tracking-tight text-[#071426]",
+      "h3": "text-xl font-semibold text-[#0C1D33]",
+      "h4": "text-base font-medium text-[#071426]",
+      "body": "text-sm text-slate-700 leading-relaxed",
+      "caption": "text-xs font-medium text-slate-500 uppercase tracking-wider"
+    }
+  },
+  "badging_system": {
+    "data_label_badges": [
+      {
+        "label": "OFFICIAL REPORTED DATA",
+        "bg": "bg-slate-100",
+        "text": "text-slate-700",
+        "border": "border-slate-300"
+      },
+      {
+        "label": "BRANCHIQ ANALYTICAL SCORE",
+        "bg": "bg-blue-50",
+        "text": "text-[#1687F8]",
+        "border": "border-blue-200"
+      },
+      {
+        "label": "PUBLIC MARKET INDICATOR",
+        "bg": "bg-cyan-50",
+        "text": "text-[#27C3E8]",
+        "border": "border-cyan-200"
+      },
+      {
+        "label": "MODEL-GENERATED ESTIMATE",
+        "bg": "bg-purple-50",
+        "text": "text-[#7657D9]",
+        "border": "border-purple-200"
+      }
+    ],
+    "data_confidence": [
+      {
+        "level": "HIGH",
+        "color": "#16A36A",
+        "badge": "bg-emerald-50 text-emerald-700 border-emerald-300"
+      },
+      {
+        "level": "MEDIUM",
+        "color": "#E79B24",
+        "badge": "bg-amber-50 text-amber-700 border-amber-300"
+      },
+      {
+        "level": "LIMITED",
+        "color": "#D9534F",
+        "badge": "bg-rose-50 text-rose-700 border-rose-300"
+      }
+    ],
+    "strategic_decision_badges": [
+      {
+        "decision": "EXPAND",
+        "color": "#16A36A",
+        "bg": "bg-emerald-100 text-emerald-800 border-emerald-400"
+      },
+      {
+        "decision": "SELECTIVE EXPANSION",
+        "color": "#1687F8",
+        "bg": "bg-blue-100 text-blue-800 border-blue-400"
+      },
+      {
+        "decision": "MAINTAIN/OPTIMIZE",
+        "color": "#E79B24",
+        "bg": "bg-amber-100 text-amber-800 border-amber-400"
+      },
+      {
+        "decision": "DIGITAL-FIRST",
+        "color": "#7657D9",
+        "bg": "bg-purple-100 text-purple-800 border-purple-400"
+      },
+      {
+        "decision": "REVIEW NETWORK STRATEGY",
+        "color": "#D9534F",
+        "bg": "bg-rose-100 text-rose-800 border-rose-400"
+      }
+    ]
+  },
+  "layout_and_navigation": {
+    "left_sidebar": {
+      "bg": "#071426",
+      "text": "#FFFFFF",
+      "border": "#0C1D33",
+      "brand_header": {
+        "title": "BRANCHIQ",
+        "logo_icon": "Geometric 'B' network topology grid",
+        "tagline": "AI Banking Network Strategy Consultant"
+      },
+      "nav_items": [
+        { "id": "01", "name": "Executive Dashboard", "icon": "LayoutDashboard", "tab": "dashboard" },
+        { "id": "02", "name": "Bank Comparison", "icon": "BarChart3", "tab": "comparison" },
+        { "id": "03", "name": "Network Analysis", "icon": "MapPin", "tab": "network" },
+        { "id": "04", "name": "BranchIQ Consultant", "icon": "Bot", "tab": "consultant" },
+        { "id": "05", "name": "Strategic Recommendations", "icon": "Compass", "tab": "recommendations" },
+        { "id": "06", "name": "Sources & Methodology", "icon": "BookOpen", "tab": "methodology" }
+      ],
+      "footer_meta": {
+        "data_coverage": "28 States, 8 Union Territories",
+        "public_sources": "RBI Reports, Census 2011/2026 Est., NPCI Data, Bank Financial Disclosures",
+        "last_updated": "Q2 2026 Updated"
+      }
+    },
+    "main_header": {
+      "bg": "#FFFFFF",
+      "border_bottom": "#DFE7F0",
+      "title": "BRANCHIQ ANALYTICS CONSOLE",
+      "subtitle": "Indian Banking Sector Network Intelligence & Growth Optimizer",
+      "bank_selector_groups": [
+        {
+          "group": "Public Sector Banks",
+          "banks": [
+            "State Bank of India (SBI)",
+            "Bank of Baroda (BOB)",
+            "Punjab National Bank (PNB)",
+            "Canara Bank"
+          ]
+        },
+        {
+          "group": "Private Sector Banks",
+          "banks": [
+            "HDFC Bank",
+            "ICICI Bank",
+            "Axis Bank",
+            "Kotak Mahindra Bank",
+            "IndusInd Bank"
+          ]
+        }
+      ],
+      "status_badge": "● Public Data Connected",
+      "actions": [
+        {
+          "label": "Generate Executive Report",
+          "action": "Open Print & PDF Export Modal"
+        }
+      ]
+    }
+  },
+  "core_views": {
+    "01_executive_dashboard": {
+      "kpi_cards": [
+        { "metric": "Total Branch Network", "sub": "National Footprint & Rural/Urban split" },
+        { "metric": "Total Deposits (₹ Cr)", "sub": "CASA & Term Deposit distribution" },
+        { "metric": "Total Advances (₹ Cr)", "sub": "Retail, MSME & Corporate ratio" },
+        { "metric": "Geographic Coverage Rate", "sub": "State & Tier-1 to Tier-6 presence score" },
+        { "metric": "Network Opportunity Score", "sub": "BranchIQ proprietary optimization index" }
+      ],
+      "charts": [
+        "Branch Network Distribution by Region (North, South, East, West, Central, North-East)",
+        "Deposit vs Advance Growth Trajectory",
+        "Branch Efficiency vs Credit-Deposit Ratio Matrix",
+        "Urban vs Semi-Urban vs Rural Network Penetration",
+        "Competitive Opportunity Score by Region"
+      ],
+      "management_priorities": "Ranked opportunity cards with priority badges, metrics, potential ROI impact, and immediate execution focus."
+    },
+    "02_bank_comparison": {
+      "features": [
+        "Bank Comparison Table across 9 Indian banks with multi-metric sorting & rank indicators",
+        "Bank Opportunity Matrix (2x2 Grid): Market Penetration vs Branch Opportunity Score",
+        "Side-by-side Peer Benchmarking (Selected Bank vs Sector Median vs Leader)"
+      ]
+    },
+    "03_network_analysis": {
+      "features": [
+        "Multi-level Filters: Bank Selector, State Selector, District/City Tier Filter",
+        "Market Intelligence Panels: Unbanked potential, GDP per branch, ATM density, Digital adoption index",
+        "6-Subscore Branch Opportunity Score breakdown: 1. Demographic Density, 2. Deposit Potential, 3. Credit Demand, 4. Competitor Gap, 5. Digital Adoption, 6. Infrastructure Readiness",
+        "Interactive Circular Score Ring visualizers"
+      ]
+    },
+    "04_branchiq_consultant": {
+      "team_agents": [
+        { "title": "Chief Banking Strategist", "focus": "Executive decision framework & capital allocation", "avatar_type": "Executive Icon Badge" },
+        { "title": "Lead Data Analyst", "focus": "Statistical market modeling & demographic forecasting", "avatar_type": "Data Analytics Badge" },
+        { "title": "Network Expansion Architect", "focus": "Micro-location scoring & physical vs digital mix", "avatar_type": "Spatial Blueprint Badge" },
+        { "title": "Risk & Compliance Advisor", "focus": "Regulatory PSL compliance & credit risk profiling", "avatar_type": "Risk Governance Badge" }
+      ],
+      "pipeline_indicator": "Active Agent Synthesis Pipeline with multi-stage progress indicators",
+      "query_response_structure": [
+        "Executive Answer (1-2 crisp executive sentences)",
+        "Key Evidence (Bulleted quantitative data points)",
+        "BranchIQ Opportunity Score Impact",
+        "Business & Strategic Reasoning",
+        "Recommended Action Plan (Short-term vs Medium-term)"
+      ]
+    },
+    "05_strategic_recommendations": {
+      "features": [
+        "2x2 Strategic Priority Matrix (High Opportunity/Low Saturation vs Low Opportunity/High Saturation)",
+        "Interactive clickable market cards triggering deep dive strategy briefs",
+        "Action Priority Board categorized by EXPAND, SELECTIVE EXPANSION, MAINTAIN/OPTIMIZE, DIGITAL-FIRST, REVIEW NETWORK STRATEGY"
+      ]
+    },
+    "06_sources_and_methodology": {
+      "features": [
+        "Data Source Cards (RBI Branch Statistics, Census Data, Ministry of Finance, Bank Annual Reports)",
+        "Expanded 'How is this score calculated?' scoring formula breakdown",
+        "Methodology Process Flow Diagram (Raw Data Collection -> Cleaning & Weighting -> 6-Subscore Computation -> AI Synthesis)"
+      ]
+    }
+  },
+  "ui_components_guidelines": {
+    "tables": "Dense, clean, fixed header, alternating row tinting on hover, subtle 1px border (#DFE7F0), clear column alignment (text left, numbers right).",
+    "kpi_cards": "White card (#FFFFFF) with 1px border (#DFE7F0), top accent indicator bar, metric value in 2xl bold, percentage delta with green/red indicator, source badge at bottom.",
+    "charts": "Recharts with customized palette (#1687F8, #27C3E8, #7657D9, #16A36A, #E79B24), clean grid lines (#DFE7F0), rich custom tooltips showing reporting period and exact numbers.",
+    "modals_and_reports": "In-browser print view styled for A4 executive briefing export with page break management and high-resolution chart rendering."
+  },
+  "testing_requirements": {
+    "rule": "Every button, link, tab, filter, modal trigger, card, select dropdown, chart container, and report generator MUST include a descriptive data-testid attribute in kebab-case.",
+    "examples": [
+      "data-testid=\"nav-tab-dashboard\"",
+      "data-testid=\"bank-selector-dropdown\"",
+      "data-testid=\"btn-generate-report\"",
+      "data-testid=\"kpi-card-total-branches\"",
+      "data-testid=\"filter-state-select\"",
+      "data-testid=\"consultant-query-input\"",
+      "data-testid=\"btn-ask-consultant\"",
+      "data-testid=\"strategic-matrix-quadrant-1\""
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Build a production-quality web app for BranchIQ in React standard frontend.",
+    "Ensure all hex values strictly match the specified color system.",
+    "Do NOT use cartoon AI avatars or generic chatbot layouts; use executive consulting agent cards.",
+    "Ensure the bank selector updates all metrics, charts, and recommendations dynamically.",
+    "Support full PDF/Print export for the Executive Report button.",
+    "Ensure seamless responsive behavior on screens down to 768px and mobile."
+  ]
+}
