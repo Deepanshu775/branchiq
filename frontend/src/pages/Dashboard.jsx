@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
-import { useApp } from "../context/AppContext";
 import { BANKS } from "../data/banks";
 import { STATE_NAMES } from "../data/regions";
+
 import {
   formatCrore,
   formatNumber,
@@ -13,21 +13,27 @@ import {
   decisionForScore,
   SCORE_WEIGHTS,
 } from "../lib/engine";
+
 import { CHART } from "../lib/theme";
+
 import { KpiCard } from "../components/shared/KpiCard";
+
 import {
   SectionTitle,
   MethodologyNote,
   ChartCard,
 } from "../components/shared/Section";
+
 import {
   DataBadge,
   DecisionBadge,
 } from "../components/shared/Badges";
+
 import {
   ScoreRing,
   ScoreBar,
 } from "../components/shared/ScoreRing";
+
 import {
   OpportunityHeatmap,
 } from "../components/shared/OpportunityHeatmap";
@@ -52,8 +58,6 @@ import {
   Bot,
   ArrowUpRight,
   Sparkles,
-  ShieldCheck,
-  ChevronRight,
 } from "lucide-react";
 
 import {
@@ -64,7 +68,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Cell,
 } from "recharts";
 
 
@@ -73,7 +76,6 @@ function TooltipBox({ active, payload, label, unit }) {
 
   return (
     <div className="rounded-md border border-[#E2E8F0] bg-white px-3 py-2 shadow-lg text-xs">
-
       <div className="font-semibold text-[#0F172A] mb-1">
         {label}
       </div>
@@ -98,7 +100,6 @@ function TooltipBox({ active, payload, label, unit }) {
           </span>
         </div>
       ))}
-
     </div>
   );
 }
@@ -136,9 +137,7 @@ export default function Dashboard() {
   const priorities = (
     dbRegion === "All India"
       ? ranked
-      : ranked.filter(
-          (r) => r.state === dbRegion
-        )
+      : ranked.filter((r) => r.state === dbRegion)
   ).slice(0, 6);
 
 
@@ -155,7 +154,6 @@ export default function Dashboard() {
 
 
   const kpis = [
-
     {
       testid: "kpi-card-banks",
       icon: Landmark,
@@ -179,9 +177,7 @@ export default function Dashboard() {
       label: "Branches Covered",
       value: formatNumber(stats.totalBranches),
       context: "Aggregate reported network",
-      badge: (
-        <DataBadge type="official" />
-      ),
+      badge: <DataBadge type="official" />,
     },
 
     {
@@ -191,9 +187,7 @@ export default function Dashboard() {
       value: formatCrore(stats.totalDeposits),
       context: "FY2025 reported",
       variant: "tint",
-      badge: (
-        <DataBadge type="official" />
-      ),
+      badge: <DataBadge type="official" />,
     },
 
     {
@@ -203,21 +197,16 @@ export default function Dashboard() {
       value: stats.opportunities,
       context: "Markets scoring 80+",
       variant: "accent",
-      badge: (
-        <DataBadge type="analytical" />
-      ),
+      badge: <DataBadge type="analytical" />,
     },
-
   ];
 
 
   return (
-
     <div
       className="space-y-8"
       data-testid="page-dashboard"
     >
-
 
       {/* ========================================================= */}
       {/* EXECUTIVE HERO */}
@@ -232,7 +221,10 @@ export default function Dashboard() {
             rounded-[24px]
             p-6
             lg:p-7
-            text-white
+            bg-white
+            text-slate-900
+            border
+            border-slate-200
             shadow-xl
             shadow-slate-900/10
           "
@@ -250,13 +242,11 @@ export default function Dashboard() {
             "
           >
 
-
             {/* ================================================= */}
             {/* LEFT HERO */}
             {/* ================================================= */}
 
             <div>
-
 
               {/* BranchIQ Intelligence Layer */}
 
@@ -269,7 +259,7 @@ export default function Dashboard() {
                   font-bold
                   uppercase
                   tracking-[0.14em]
-                  text-slate-900
+                  text-red-600
                 "
               >
 
@@ -278,7 +268,7 @@ export default function Dashboard() {
                     h-2
                     w-2
                     rounded-full
-                    bg-slate-900
+                    bg-red-600
                     bq-live-dot
                   "
                 />
@@ -288,7 +278,7 @@ export default function Dashboard() {
               </div>
 
 
-              {/* Main heading */}
+              {/* Main Heading */}
 
               <h1
                 className="
@@ -301,13 +291,13 @@ export default function Dashboard() {
                   mt-3
                   max-w-3xl
                   leading-[1.06]
-                  text-white
+                  text-slate-950
                 "
               >
 
                 Turn branch network data into{" "}
 
-                <span className="text-cyan-300">
+                <span className="text-red-600">
                   strategic decisions.
                 </span>
 
@@ -318,7 +308,7 @@ export default function Dashboard() {
 
               <p
                 className="
-                  text-slate-200
+                  text-slate-700
                   text-sm
                   lg:text-[15px]
                   mt-4
@@ -343,8 +333,7 @@ export default function Dashboard() {
                 "
               >
 
-
-                {/* BANK FILTER */}
+                {/* BANK */}
 
                 <div className="flex flex-col gap-1">
 
@@ -354,12 +343,11 @@ export default function Dashboard() {
                       font-bold
                       uppercase
                       tracking-widest
-                      text-slate-200
+                      text-slate-700
                     "
                   >
                     Bank
                   </span>
-
 
                   <Select
                     value={dbBank}
@@ -372,27 +360,23 @@ export default function Dashboard() {
                         h-9
                         w-[200px]
                         rounded-xl
-                        bg-white/10
-                        border-white/15
-                        text-white
+                        bg-white
+                        border-slate-300
+                        text-slate-900
                         text-sm
                         font-semibold
-                        backdrop-blur
-                        [&>svg]:text-slate-300
+                        shadow-sm
+                        [&>svg]:text-slate-700
                       "
                     >
-
                       <SelectValue />
-
                     </SelectTrigger>
-
 
                     <SelectContent className="max-h-[340px]">
 
                       <SelectItem value="All Banks">
                         All Banks
                       </SelectItem>
-
 
                       <SelectGroup>
 
@@ -401,22 +385,19 @@ export default function Dashboard() {
                             text-[10px]
                             uppercase
                             tracking-wider
-                            text-slate-400
+                            text-slate-500
                           "
                         >
                           Banks
                         </SelectLabel>
 
-
                         {BANKS.map((b) => (
-
                           <SelectItem
                             key={b.name}
                             value={b.name}
                           >
                             {b.short}
                           </SelectItem>
-
                         ))}
 
                       </SelectGroup>
@@ -428,7 +409,7 @@ export default function Dashboard() {
                 </div>
 
 
-                {/* REGION FILTER */}
+                {/* REGION */}
 
                 <div className="flex flex-col gap-1">
 
@@ -438,12 +419,11 @@ export default function Dashboard() {
                       font-bold
                       uppercase
                       tracking-widest
-                      text-slate-200
+                      text-slate-700
                     "
                   >
                     Region
                   </span>
-
 
                   <Select
                     value={dbRegion}
@@ -456,20 +436,17 @@ export default function Dashboard() {
                         h-9
                         w-[190px]
                         rounded-xl
-                        bg-white/10
-                        border-white/15
-                        text-white
+                        bg-white
+                        border-slate-300
+                        text-slate-900
                         text-sm
                         font-semibold
-                        backdrop-blur
-                        [&>svg]:text-slate-300
+                        shadow-sm
+                        [&>svg]:text-slate-700
                       "
                     >
-
                       <SelectValue />
-
                     </SelectTrigger>
-
 
                     <SelectContent className="max-h-[340px]">
 
@@ -477,16 +454,13 @@ export default function Dashboard() {
                         All India
                       </SelectItem>
 
-
                       {STATE_NAMES.map((s) => (
-
                         <SelectItem
                           key={s}
                           value={s}
                         >
                           {s}
                         </SelectItem>
-
                       ))}
 
                     </SelectContent>
@@ -511,13 +485,12 @@ export default function Dashboard() {
                 rounded-2xl
                 border
                 border-slate-200
-                bg-white
+                bg-slate-50
                 p-5
                 bq-ai-glow
                 shadow-lg
               "
             >
-
 
               {/* AI HEADER */}
 
@@ -542,7 +515,7 @@ export default function Dashboard() {
                       h-9
                       w-9
                       rounded-xl
-                      bg-blue-100
+                      bg-red-100
                       flex
                       items-center
                       justify-center
@@ -551,15 +524,12 @@ export default function Dashboard() {
 
                     <Bot
                       size={18}
-                      className="text-blue-700"
+                      className="text-red-600"
                     />
 
                   </span>
 
-
                   <div>
-
-                    {/* DARK TEXT */}
 
                     <div
                       className="
@@ -570,7 +540,6 @@ export default function Dashboard() {
                     >
                       BranchIQ AI
                     </div>
-
 
                     <div
                       className="
@@ -599,10 +568,9 @@ export default function Dashboard() {
 
                 </div>
 
-
                 <Sparkles
                   size={16}
-                  className="text-blue-700"
+                  className="text-red-600"
                 />
 
               </div>
@@ -622,7 +590,7 @@ export default function Dashboard() {
                 <span
                   className="
                     font-semibold
-                    text-slate-900
+                    text-slate-950
                   "
                 >
                   Executive signal:
@@ -635,7 +603,7 @@ export default function Dashboard() {
                 <span
                   className="
                     font-bold
-                    text-blue-700
+                    text-red-600
                   "
                 >
                   {index}/100
@@ -650,7 +618,7 @@ export default function Dashboard() {
                 className="
                   mt-4
                   rounded-xl
-                  bg-slate-100
+                  bg-white
                   border
                   border-slate-200
                   px-3
@@ -669,12 +637,11 @@ export default function Dashboard() {
                     "Review priority markets"}
                 </span>
 
-
                 <ArrowUpRight
                   size={15}
                   className="
                     shrink-0
-                    text-blue-700
+                    text-red-600
                   "
                 />
 
@@ -706,12 +673,10 @@ export default function Dashboard() {
         >
 
           {kpis.map((k) => (
-
             <KpiCard
               key={k.testid}
               {...k}
             />
-
           ))}
 
         </div>
@@ -732,9 +697,6 @@ export default function Dashboard() {
         "
       >
 
-
-        {/* OPPORTUNITY INDEX */}
-
         <div
           className="
             bq-card
@@ -753,7 +715,6 @@ export default function Dashboard() {
             India Banking Opportunity Index
           </div>
 
-
           <div className="my-3">
 
             <ScoreRing
@@ -765,7 +726,6 @@ export default function Dashboard() {
 
           </div>
 
-
           <div
             className="
               text-sm
@@ -776,15 +736,12 @@ export default function Dashboard() {
             {dbBank}
           </div>
 
-
           <DecisionBadge
             decision={decision}
           />
 
         </div>
 
-
-        {/* SCORE COMPONENTS */}
 
         <div
           className="
@@ -814,13 +771,11 @@ export default function Dashboard() {
               Opportunity Score Components
             </h3>
 
-
             <DataBadge
               type="analytical"
             />
 
           </div>
-
 
           <div
             className="
@@ -848,7 +803,6 @@ export default function Dashboard() {
 
           </div>
 
-
           <MethodologyNote
             className="mt-5"
           />
@@ -875,7 +829,6 @@ export default function Dashboard() {
           }
           testid="section-map"
         />
-
 
         <div
           className="
@@ -906,9 +859,6 @@ export default function Dashboard() {
           gap-4
         "
       >
-
-
-        {/* BRANCH NETWORK CHART */}
 
         <ChartCard
           title="Branch Network Comparison"
@@ -942,7 +892,6 @@ export default function Dashboard() {
                 vertical={false}
               />
 
-
               <XAxis
                 dataKey="name"
                 tick={{
@@ -955,14 +904,12 @@ export default function Dashboard() {
                 height={54}
               />
 
-
               <YAxis
                 tick={{
                   fontSize: 10,
                   fill: "#64748b",
                 }}
               />
-
 
               <Tooltip
                 content={
@@ -972,7 +919,6 @@ export default function Dashboard() {
                   fill: "#F8FAFC",
                 }}
               />
-
 
               <Bar
                 dataKey="value"
@@ -992,8 +938,6 @@ export default function Dashboard() {
 
         </ChartCard>
 
-
-        {/* DEPOSIT CHART */}
 
         <ChartCard
           title="Deposits Comparison (₹ '000 Cr)"
@@ -1027,7 +971,6 @@ export default function Dashboard() {
                 vertical={false}
               />
 
-
               <XAxis
                 dataKey="name"
                 tick={{
@@ -1040,14 +983,12 @@ export default function Dashboard() {
                 height={54}
               />
 
-
               <YAxis
                 tick={{
                   fontSize: 10,
                   fill: "#64748b",
                 }}
               />
-
 
               <Tooltip
                 content={
@@ -1057,7 +998,6 @@ export default function Dashboard() {
                   fill: "#F8FAFC",
                 }}
               />
-
 
               <Bar
                 dataKey="value"
@@ -1093,7 +1033,6 @@ export default function Dashboard() {
           testid="section-priorities"
         />
 
-
         <div
           className="
             grid
@@ -1120,9 +1059,6 @@ export default function Dashboard() {
               "
             >
 
-
-              {/* CARD HEADER */}
-
               <div
                 className="
                   flex
@@ -1147,16 +1083,15 @@ export default function Dashboard() {
                       items-center
                       justify-center
                       rounded-md
-                      bg-[#DBEAFE]
+                      bg-[#FEE2E2]
                       text-xs
                       font-bold
                       stat-num
-                      text-[#2563EB]
+                      text-red-600
                     "
                   >
                     {idx + 1}
                   </span>
-
 
                   <div>
 
@@ -1172,13 +1107,12 @@ export default function Dashboard() {
 
                       <MapPin
                         size={14}
-                        className="text-[#2563EB]"
+                        className="text-red-600"
                       />
 
                       {p.state}
 
                     </div>
-
 
                     <div
                       className="
@@ -1207,7 +1141,6 @@ export default function Dashboard() {
                     {p.score}
                   </div>
 
-
                   <div
                     className="
                       text-[10px]
@@ -1221,8 +1154,6 @@ export default function Dashboard() {
 
               </div>
 
-
-              {/* RECOMMENDATION */}
 
               <div
                 className="
@@ -1252,8 +1183,6 @@ export default function Dashboard() {
               </div>
 
 
-              {/* PRIORITY */}
-
               <div
                 className="
                   mt-3
@@ -1281,7 +1210,6 @@ export default function Dashboard() {
 
                 </span>
 
-
                 <DecisionBadge
                   decision={p.decision}
                 />
@@ -1296,8 +1224,6 @@ export default function Dashboard() {
 
       </section>
 
-
     </div>
-
   );
 }
